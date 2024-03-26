@@ -1,0 +1,13 @@
+name: Revert Deployment
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: Tag to revert to, e.g. "abdefg"
+        required: true
+jobs:
+  migrate-down:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
